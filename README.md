@@ -1,4 +1,4 @@
-# ForceKill Focused — LSPosed module (OneUI 8.5)
+# ForceKill Focused - LSPosed module (OneUI 8.5)
 
 Adds a **Force kill** item to the per-task popup menu in the
 Recents / background-apps screen, directly **below Keep open**.
@@ -32,7 +32,7 @@ API stub is vendored in `app/libs/`).
 ## How it works (one file: `MainHook.java`)
 
 - OneUI's task menu is a custom DataBinding view (`task_menu_layout` rows of
-  `task_menu_item_layout`), not a framework `PopupMenu` — verified via
+  `task_menu_item_layout`), not a framework `PopupMenu` - verified via
   on-device resource + stack-trace inspection.
 - Hooks `LayoutInflater.inflate()`; every `task_menu_item_layout` inflation
   schedules a `post()` that clones the row natively below the Keep-open row
@@ -49,5 +49,5 @@ API stub is vendored in `app/libs/`).
   `adb shell dumpsys activity activities | grep -i recents` and check it
   matches the substring filter; if the wrong app gets killed, the fallback
   path needs the exact OneUI getter name from a `jadx` dump of SecSystemUI.
-- Skipped: whitelist UI, kill-all mode, Magisk/KSU flashable zip (unnecessary —
+- Skipped: whitelist UI, kill-all mode, Magisk/KSU flashable zip (unnecessary -
   LSPosed abstracts the root backend). Add when needed.
