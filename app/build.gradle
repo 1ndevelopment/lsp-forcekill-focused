@@ -1,0 +1,20 @@
+plugins { id("com.android.application") }
+android {
+    namespace = "com.lsp.forcekill.focused"
+    compileSdk = 34
+    defaultConfig {
+        applicationId = "com.lsp.forcekill.focused"
+        minSdk = 26
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+    buildTypes { release { minifyEnabled = false } }
+    lint { checkReleaseBuilds = false }
+    compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
+}
+dependencies {
+    // ponytail: vendored stub (Apache-2.0) — upstream coords vanished from
+    // Maven Central/JCenter, and this jar was already in the local Gradle cache.
+    compileOnly(files("libs/xposed-api-82.jar"))
+}
