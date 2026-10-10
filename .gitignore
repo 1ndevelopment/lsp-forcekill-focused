@@ -1,9 +1,9 @@
 *.iml
 .gradle/
-/local.properties
+local.properties
 .idea/
 .DS_Store
-/build/
-/app/build/
+build/
+app/build/
 *.apk
-!forcekill-focused.apk
+forcekill-focused.apk
