@@ -7,3 +7,7 @@ build/
 app/build/
 *.apk
 forcekill-focused.apk
+# Gradle wrapper (generated locally, not tracked)
+gradlew
+gradlew.bat
+gradle/wrapper/
