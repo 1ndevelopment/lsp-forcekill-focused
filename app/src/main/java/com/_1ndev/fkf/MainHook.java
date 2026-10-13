@@ -1,4 +1,4 @@
-package io.github._1ndevelopment.fkf;
+package com._1ndev.fkf;
 
 import android.app.ActivityManager;
 import android.content.ComponentName;
@@ -50,7 +50,7 @@ public class MainHook implements IXposedHookLoadPackage {
         SKIP.add("com.sec.android.app.launcher");
         SKIP.add("com.google.android.apps.nexuslauncher");
         SKIP.add("com.miui.home");
-        SKIP.add("io.github._1ndevelopment.fkf");
+        SKIP.add("com.1ndev.fkf");
     }
 
     private static int sItemLayoutId = -1; // -1 = unresolved, 0 = absent
