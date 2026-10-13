@@ -1,9 +1,9 @@
 plugins { id("com.android.application") }
 android {
-    namespace = "com._1ndev.fkf"
+    namespace = "io.github.ndevlabs.fkf"
     compileSdk = 34
     defaultConfig {
-        applicationId = "com.1ndev.fkf"
+        applicationId = "io.github.ndevlabs.fkf"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
