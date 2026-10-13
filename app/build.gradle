@@ -1,4 +1,7 @@
 plugins { id("com.android.application") }
+def localProps = new Properties()
+def localPropsFile = rootProject.file("local.properties")
+if (localPropsFile.exists()) localPropsFile.withInputStream { localProps.load(it) }
 android {
     namespace = "io.github.ndevlabs.fkf"
     compileSdk = 34
@@ -9,7 +12,23 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    buildTypes { release { minifyEnabled = false } }
+    signingConfigs {
+        release {
+            def sf = localProps.getProperty("fkf.storeFile")
+            if (sf) {
+                storeFile = file(sf)
+                storePassword = localProps.getProperty("fkf.storePassword")
+                keyAlias = localProps.getProperty("fkf.keyAlias")
+                keyPassword = localProps.getProperty("fkf.keyPassword")
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled = false
+            if (localProps.getProperty("fkf.storeFile")) signingConfig = signingConfigs.release
+        }
+    }
     lint { checkReleaseBuilds = false }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
 }
