@@ -1,4 +1,4 @@
-package com.lsp.forcekill.focused;
+package io.github._1ndevelopment.fkf;
 
 import android.app.ActivityManager;
 import android.content.ComponentName;
@@ -50,7 +50,7 @@ public class MainHook implements IXposedHookLoadPackage {
         SKIP.add("com.sec.android.app.launcher");
         SKIP.add("com.google.android.apps.nexuslauncher");
         SKIP.add("com.miui.home");
-        SKIP.add("com.lsp.forcekill.focused");
+        SKIP.add("io.github._1ndevelopment.fkf");
     }
 
     private static int sItemLayoutId = -1; // -1 = unresolved, 0 = absent

@@ -1,9 +1,9 @@
 plugins { id("com.android.application") }
 android {
-    namespace = "com.lsp.forcekill.focused"
+    namespace = "io.github._1ndevelopment.fkf"
     compileSdk = 34
     defaultConfig {
-        applicationId = "com.lsp.forcekill.focused"
+        applicationId = "io.github._1ndevelopment.fkf"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

@@ -8,7 +8,7 @@
     <application
         android:label="ForceKill Focused">
         <meta-data android:name="xposedmodule" android:value="true" />
-        <meta-data android:name="xposeddescription" android:value="Adds Force Kill button to the Recents nav bar (OneUI 8.5)." />
+        <meta-data android:name="xposeddescription" android:value="Adds Force Kill button to the Recents task menu (OneUI 8.5)." />
         <meta-data android:name="xposedminversion" android:value="93" />
         <meta-data android:name="xposedscope" android:resource="@array/scope" />
     </application>
